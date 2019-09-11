@@ -8,7 +8,9 @@
 </li>
 <li><a href="https://github.com/gbr88/patchwork.git">Forking task (patchwork)</a>
 </li>
-</ul>
+<li><a href="https://gbr88.github.io/index.html">0month homework webpage</a>
+</li>
+</ul
 <h2>
 <a href="https://github.com/green-fox-academy/rapgod-syllabus.git">Rapgod class syllabus</a>
 </h2>
