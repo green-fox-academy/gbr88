@@ -6,6 +6,6 @@
 
 var integers:number[] = [4, 5, 6, 7];
 
-integers.forEach(function(item, index) {
-  console.log(item);
+integers.forEach(function(e, i) {
+  console.log(e);
 });
