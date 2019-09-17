@@ -7,10 +7,8 @@ let example: string = 'In a dishwasher far far away';
 // Expected ouput: In a galaxy far far away
 
 let toReplace: RegExp = /dishwasher/gi;
+let withReplace: string = 'galaxy';
 
-let replacement: string = 'galaxy';
-
-
-console.log(example.replace(toReplace, 'galaxy'));
+console.log(example.replace(toReplace, withReplace));
 
 export = example;
