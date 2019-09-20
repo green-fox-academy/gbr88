@@ -33,3 +33,23 @@ for (let i: number = 0; i <= lines; i++) {
   drawLine(upperRightMX, upperRightMY, upperRightLX, upperRightLY, 'green');
   upperRightMX += steps; upperRightLY += steps;
 }
+
+let upperLeftMX: number = canvas.width / 2;
+let upperLeftMY: number = canvas.height / 2;
+let upperLeftLX: number = canvas.width / 2;
+let upperLeftLY: number = 0;
+
+for (let i: number = 0; i <= lines; i++) {
+  drawLine(upperLeftMX, upperLeftMY, upperLeftLX, upperLeftLY, 'green');
+  upperLeftMX -= steps; upperLeftLY += steps;
+}
+
+let lowerLeftMX: number = canvas.width / 2;
+let lowerLeftMY: number = canvas.height / 2;
+let lowerLeftLX: number = canvas.width / 2;
+let lowerLeftLY: number = canvas.height;
+
+for (let i: number = 0; i <= lines; i++) {
+  drawLine(lowerLeftMX, lowerLeftMY, lowerLeftLX, lowerLeftLY, 'green');
+  lowerLeftMX -= steps; lowerLeftLY -= steps;
+}
