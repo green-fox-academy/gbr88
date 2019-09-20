@@ -3,7 +3,6 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-//Divide the canvas into 4/16/64 equal parts and repeat the line play pattern in each quarter
 
 function drawLine(mX: number, mY: number, lX: number, lY: number, color: string) {
   ctx.strokeStyle = color;
@@ -14,6 +13,7 @@ function drawLine(mX: number, mY: number, lX: number, lY: number, color: string)
 }
 
 let steps: number = canvas.width / 20;
+let lines: number = canvas.width / steps;
 
 let leftMX: number = 0;
 let leftMY: number = 0;
@@ -25,7 +25,7 @@ let rightMY: number = 0;
 let rightLX: number = canvas.width;
 let rightLY: number = canvas.height;
 
-for (let i: number = 1; i <= canvas.height; i++) {
+for (let i: number = 1; i <= lines; i++) {
   drawLine(leftMX, leftMY, leftLX, leftLY, 'green');
   leftMY += steps; leftLX += steps;
   drawLine(rightMX, rightMY, rightLX, rightLY, 'purple');
