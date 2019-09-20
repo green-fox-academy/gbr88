@@ -16,8 +16,11 @@ let mY: number = canvas.height;
 let lX: number = canvas.width / 2;
 let lY: number = canvas.height / 2;
 let steps: number = canvas.width / 20;
+let lines: number = (canvas.width /2) / steps;
 
-for (let i: number = 1; i <= canvas.width / 50; i++) {
+for (let i: number = 1; i <= lines; i++) {
   drawLine(mX, mY, lX + steps, lY, 'green');
   mY -= steps; lX += steps;
 }
+
+
