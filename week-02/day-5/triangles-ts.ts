@@ -37,3 +37,16 @@ for (let i: number = 1; i <= lines; i++) {
   startRightLX -= steps / 2;
   startRightLY += steps;
 }
+
+let startLineMX: number = 0;
+let startLineMY: number = canvas.height;
+let startLineLX: number = canvas.width;
+let startLineLY: number = canvas.height;
+
+for (let i: number = 1; i <= lines; i++) {
+  drawLine(startLineMX, startLineMY, startLineLX, startLineLY)
+  startLineMX += steps / 2;
+  startLineMY -= steps;
+  startLineLX -= steps / 2;
+  startLineLY -= steps;
+}
