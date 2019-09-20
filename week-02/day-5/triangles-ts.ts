@@ -10,8 +10,9 @@ function drawLine(mX: number, mY: number, lX: number, lY: number) {
   ctx.stroke();
 }
 
-let steps: number = canvas.width / 20;
 let lines: number = 20;
+let steps: number = canvas.width / lines;
+
 
 let startLeftMX: number = 0;
 let startLeftMY: number = canvas.height;
@@ -23,4 +24,16 @@ for (let i: number = 1; i <= lines; i++) {
   startLeftMX += steps;
   startLeftLX += steps / 2;
   startLeftLY += steps;
+}
+
+let startRightMX: number = canvas.width;
+let startRightMY: number = canvas.height;
+let startRightLX: number = canvas.width / 2;
+let startRightLY: number = 0;
+
+for (let i: number = 1; i <= lines; i++) {
+  drawLine(startRightMX, startRightMY, startRightLX, startRightLY)
+  startRightMX -= steps;
+  startRightLX -= steps / 2;
+  startRightLY += steps;
 }
