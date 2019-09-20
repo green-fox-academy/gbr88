@@ -11,16 +11,25 @@ function drawLine(mX: number, mY: number, lX: number, lY: number, color: string)
   ctx.stroke();
 }
 
-let mX: number = canvas.width / 2;
-let mY: number = canvas.height;
-let lX: number = canvas.width / 2;
-let lY: number = canvas.height / 2;
 let steps: number = canvas.width / 20;
 let lines: number = (canvas.width /2) / steps;
 
-for (let i: number = 1; i <= lines; i++) {
-  drawLine(mX, mY, lX + steps, lY, 'green');
-  mY -= steps; lX += steps;
+let lowerRightMX: number = canvas.width / 2;
+let lowerRightMY: number = canvas.height;
+let lowerRightLX: number = canvas.width / 2;
+let lowerRightLY: number = canvas.height / 2;
+
+for (let i: number = 0; i <= lines; i++) {
+  drawLine(lowerRightMX, lowerRightMY, lowerRightLX, lowerRightLY, 'green');
+  lowerRightMY -= steps; lowerRightLX += steps;
 }
 
+let upperRightMX: number = canvas.width / 2;
+let upperRightMY: number = canvas.height / 2;
+let upperRightLX: number = canvas.width / 2;
+let upperRightLY: number = 0;
 
+for (let i: number = 0; i <= lines; i++) {
+  drawLine(upperRightMX, upperRightMY, upperRightLX, upperRightLY, 'green');
+  upperRightMX += steps; upperRightLY += steps;
+}
