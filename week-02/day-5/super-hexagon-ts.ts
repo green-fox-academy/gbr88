@@ -37,4 +37,11 @@ function drawHex(size: number, startX: number, startY: number) {
   ctx.stroke();
 }
 
-drawHex(100, 200, 20)
+let startX: number = canvas.width / 2;
+let startY: number = 0;
+let size: number = 20;
+
+for (let i: number = 1; i < 10; i++) {
+  drawHex(20, startX, startY);
+  startY += (size * (Math.sqrt(3)));
+}
