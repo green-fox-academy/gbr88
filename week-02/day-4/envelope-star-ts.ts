@@ -3,53 +3,81 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
+// constans
+const steps: number = canvas.width / 20; // change value here for line density
+const lines: number = (canvas.width / 2) / steps;
+
+// starting values
+const upperLeft = {
+  startMX: canvas.width / 2,
+  startMY: canvas.height / 2,
+  startLX: canvas.width / 2,
+  startLY: 0,
+  color: 'green'
+}
+
+const upperRight = {
+  startMX: canvas.width / 2,
+  startMY: canvas.height / 2,
+  startLX: canvas.width / 2,
+  startLY: 0,
+  color: 'green'
+}
+
+const lowerLeft = {
+  startMX: canvas.width / 2,
+  startMY: canvas.height / 2,
+  startLX: canvas.width / 2,
+  startLY: canvas.height,
+  color: 'green'
+}
+
+const lowerRight = {
+  startMX: canvas.width / 2,
+  startMY: canvas.height,
+  startLX: canvas.width / 2,
+  startLY: canvas.height / 2,
+  color: 'green'
+}
+
+// draws the envelop star
+for (let i: number = 0; i <= lines; i++) {
+  drawUpperLeft();
+  drawUpperRight();
+  drawLowerLeft();
+  drawLowerRight();
+}
+
+// functions
+function drawUpperLeft() {
+  drawLine(upperLeft.startMX, upperLeft.startMY, upperLeft.startLX, upperLeft.startLY, upperLeft.color);
+  upperLeft.startMX -= steps;
+  upperLeft.startLY += steps;
+}
+
+function drawUpperRight() {
+  drawLine(upperRight.startMX, upperRight.startMY, upperRight.startLX, upperRight.startLY, upperRight.color);
+  upperRight.startMX += steps;
+  upperRight.startLY += steps;
+}
+
+function drawLowerLeft() {
+  drawLine(lowerLeft.startMX, lowerLeft.startMY, lowerLeft.startLX, lowerLeft.startLY, lowerLeft.color);
+  lowerLeft.startMX -= steps;
+  lowerLeft.startLY -= steps;
+}
+
+function drawLowerRight() {
+  drawLine(lowerRight.startMX, lowerRight.startMY, lowerRight.startLX, lowerRight.startLY, lowerRight.color);
+  lowerRight.startMY -= steps;
+  lowerRight.startLX += steps;
+}
+
+// helpers
 function drawLine(mX: number, mY: number, lX: number, lY: number, color: string) {
   ctx.strokeStyle = color;
   ctx.beginPath();
   ctx.moveTo(mX, mY);
   ctx.lineTo(lX, lY);
   ctx.stroke();
-}
-
-let steps: number = canvas.width / 20;
-let lines: number = (canvas.width /2) / steps;
-
-let lowerRightMX: number = canvas.width / 2;
-let lowerRightMY: number = canvas.height;
-let lowerRightLX: number = canvas.width / 2;
-let lowerRightLY: number = canvas.height / 2;
-
-for (let i: number = 0; i <= lines; i++) {
-  drawLine(lowerRightMX, lowerRightMY, lowerRightLX, lowerRightLY, 'green');
-  lowerRightMY -= steps; lowerRightLX += steps;
-}
-
-let upperRightMX: number = canvas.width / 2;
-let upperRightMY: number = canvas.height / 2;
-let upperRightLX: number = canvas.width / 2;
-let upperRightLY: number = 0;
-
-for (let i: number = 0; i <= lines; i++) {
-  drawLine(upperRightMX, upperRightMY, upperRightLX, upperRightLY, 'green');
-  upperRightMX += steps; upperRightLY += steps;
-}
-
-let upperLeftMX: number = canvas.width / 2;
-let upperLeftMY: number = canvas.height / 2;
-let upperLeftLX: number = canvas.width / 2;
-let upperLeftLY: number = 0;
-
-for (let i: number = 0; i <= lines; i++) {
-  drawLine(upperLeftMX, upperLeftMY, upperLeftLX, upperLeftLY, 'green');
-  upperLeftMX -= steps; upperLeftLY += steps;
-}
-
-let lowerLeftMX: number = canvas.width / 2;
-let lowerLeftMY: number = canvas.height / 2;
-let lowerLeftLX: number = canvas.width / 2;
-let lowerLeftLY: number = canvas.height;
-
-for (let i: number = 0; i <= lines; i++) {
-  drawLine(lowerLeftMX, lowerLeftMY, lowerLeftLX, lowerLeftLY, 'green');
-  lowerLeftMX -= steps; lowerLeftLY -= steps;
 }
