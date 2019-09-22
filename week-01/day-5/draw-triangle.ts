@@ -11,9 +11,9 @@ let lineCount: number = 4;
 // The triangle should have as many lines as lineCount is
 
 for (let i: number = 1; i <= lineCount; i++) {
-  let stars: string = ""
+  let stars: string = '';
   for (let j: number = 1; j <= i; j++) {
-  stars += "*"
+    stars = stars.concat('*');
   }
-  console.log(stars)
+  console.log(stars);
 }
