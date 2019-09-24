@@ -10,19 +10,23 @@
 const fs = require('fs');
 
 
+// checks for already existing file, so no errors, it will run
+writeLines('my-file.txt', 'apple', 5);
+// with wrong filename input, catch will work and will display no error
+writeLines('thisfiledoesnotexists', 'apple', 5);
+
 function writeLines(path: string, word: string, number: number) {
-  let filePath: string = path;
   let inputWords: string = '';
 
   for (let i: number = 1; i <= number; i++) {
     inputWords = inputWords.concat(word + '\r\n');
   }
   try {
-    fs.writeFileSync(filePath, inputWords.trim(), 'utf8');
+    if (fs.existsSync(path) == true) {
+      fs.writeFileSync(path, inputWords.trim(), 'utf8');
+    } else throw 'error';
   }
   catch (error) {
     console.log();
   }
 }
-
-writeLines('my-file.txt', 'apple', 5);
