@@ -13,7 +13,7 @@ tenDividedBy(0);
 function tenDividedBy(number: number) {
   try {
     if (number == 0) {
-      throw 'error'
+      throw 'error';
     } else console.log(10 / number);
   }
   catch (error) {
