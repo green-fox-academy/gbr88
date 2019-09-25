@@ -11,7 +11,6 @@
 class Animal {
   private _hunger: number;
   private _thirst: number;
-  private _number: number;
 
   constructor(hunger?: number, thirst?: number,) {
     if (hunger) {
