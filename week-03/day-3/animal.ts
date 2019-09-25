@@ -12,17 +12,9 @@ class Animal {
   private _hunger: number;
   private _thirst: number;
 
-  constructor(hunger?: number, thirst?: number,) {
-    if (hunger) {
-      this._hunger = hunger;
-    } else {
-      this._hunger = 50;
-    }
-    if (thirst) {
-      this._thirst = thirst;
-    } else {
-      this._thirst = 50;
-    }
+  constructor(hunger: number = 50, thirst: number = 50) {
+    this._hunger = hunger;
+    this._thirst = thirst;
   }
 
   public eat(): void {
@@ -34,19 +26,27 @@ class Animal {
   }
 
   public play(): void {
-    this._hunger += 1, this._thirst += 1;
+    this._hunger += 1;
+    this._thirst += 1;
   }
 
   public status(): string {
     return `This animal has hunger: ${this._hunger} and thirst: ${this._thirst}`;
   }
 
+  public hunger(): number {
+    return this._hunger;
+  }
+
+  public thirst(): number {
+    return this._thirst
+  }
 }
 
-let animal1 = new Animal();
+let animal1 = new Animal(10, 10);
 console.log(animal1.status());
 animal1.play();
 console.log(animal1.status());
 animal1.eat();
 animal1.drink();
-console.log(animal1.status());
+console.log('This animal has thirst: ' + animal1.hunger());
