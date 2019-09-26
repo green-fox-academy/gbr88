@@ -2,7 +2,6 @@
 
 import { Thing } from './thing';
 import { Fleet } from './fleet';
-import { FleetOfThings } from './fleetOfThings';
 
 // -  You have the `Thing` class
 // -  You have the `Fleet` class
@@ -19,17 +18,28 @@ import { FleetOfThings } from './fleetOfThings';
 
 // Hint: You have to create a `print()` method as well 
 
-let fleet = new Fleet();
+class FleetOfThings {
 
-let thing1 = new Thing('Get milk');
-let thing2 = new Thing('Remove the obstacles');
-let thing3 = new Thing('Stand up');
-let thing4 = new Thing('Eat lunch');
+  main() {
+    let fleet = new Fleet();
 
-thing3.complete();
-thing4.complete();
+    let thing1 = new Thing('Get milk');
+    let thing2 = new Thing('Remove the obstacles');
+    let thing3 = new Thing('Stand up');
+    let thing4 = new Thing('Eat lunch');
 
-fleet.add(thing1);
-fleet.add(thing2);
-fleet.add(thing3);
-fleet.add(thing4);
+    thing3.complete();
+    thing4.complete();
+
+    fleet.add(thing1);
+    fleet.add(thing2);
+    fleet.add(thing3);
+    fleet.add(thing4);
+
+    fleet.print();
+  }
+}
+
+let fleetOfThings = new FleetOfThings();
+
+fleetOfThings.main();

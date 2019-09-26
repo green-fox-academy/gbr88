@@ -16,6 +16,16 @@ class Fleet {
   getThings(): Thing[] {
     return this.things;
   }
+
+  print(): void {
+    for (let i = 0; i < this.things.length; i++) {
+      if (this.things[i].getCompleted()) {
+        console.log((i + 1) + '. ' + '[x] ' + this.things[i].getName());
+      } else {
+        console.log((i + 1) + '. ' + '[ ] ' + this.things[i].getName());
+      }
+    }
+  }
 }
 
 export { Fleet };
