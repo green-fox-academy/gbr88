@@ -1,10 +1,5 @@
 'use strict';
 
-// The Garden
-// is able to hold unlimited amount of flowers or trees
-// when watering it should only water those what needs water with equally divided amount amongst them
-// eg. watering with 40 and 4 of them need water then each gets watered with 10
-
 // The Tree
 // needs water if its current water amount is less then 10
 // when watering it the tree can only absorb the 40% of the water
@@ -38,4 +33,9 @@ export class Plant {
     this._waterAmount += number * this._absorb;
   }
 
+  status(): void {
+    if (this.needsWater()) {
+      console.log('The ' + this._color + ' ' + this._plantType + ' needs water');
+    } else console.log('The ' + this._color + ' ' + this._plantType + ' doesnt need water');
+  }
 }

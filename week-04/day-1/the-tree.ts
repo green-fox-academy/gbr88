@@ -8,9 +8,8 @@
 import { Plant } from './the-plant';
 
 export class Tree extends Plant {
-  protected _waterAmount: number;
 
-  constructor(color: string, type: string) {
-    super(color, type, 10, 0.4)
+  constructor(color: string) {
+    super(color, 'Tree', 10, 0.4)
   }
 }

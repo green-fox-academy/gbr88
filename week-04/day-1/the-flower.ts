@@ -9,7 +9,7 @@ import { Plant } from './the-plant';
 
 export class Flower extends Plant {
 
-  constructor(color: string, type: string) {
-    super(color, type, 5, 0.75)
+  constructor(color: string) {
+    super(color, 'Flower', 5, 0.75)
   }
 }
