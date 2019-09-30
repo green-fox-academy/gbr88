@@ -7,7 +7,7 @@
 // We can use() the sharpie objects
 // which decreases inkAmount
 
-class Sharpie {
+export class Sharpie {
   private _color: string;
   private _width: number;
   private _inkAmount: number;
@@ -27,8 +27,3 @@ class Sharpie {
     return this._inkAmount;
   }
 }
-
-let sharpie1 = new Sharpie('black',200);
-console.log(sharpie1.ink());
-sharpie1.use();
-console.log(sharpie1.ink());
