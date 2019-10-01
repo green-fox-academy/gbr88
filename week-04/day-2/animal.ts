@@ -21,72 +21,15 @@ export abstract class Animal {
 
   constructor(name: string, age?: number, gender?: string) {
     this._name = name;
-    this._age = age;
-    this._gender = gender;
+    this._age = age != undefined ? age : 1;
+    this._gender = gender != undefined ? gender : 'female';
   }
 
-  abstract getName(): string;
+  getName(): string {
+    return this._name;
+  };
+
   abstract breed(): string;
-  abstract getAge(): number;
-  abstract getGender(): string;
-}
-
-export class Reptile extends Animal {
-  constructor(name: string, age?: number, gender?: string) {
-    super(name, age, gender);
-  }
-
-  getName(): string {
-    return this._name;
-  };
-
-  breed(): string {
-    return 'laying eggs.';
-  };
-
-  getAge(): number {
-    return this._age;
-  };
-
-  getGender(): string {
-    return this._gender;
-  };
-}
-
-export class Mammal extends Animal {
-  constructor(name: string, age?: number, gender?: string) {
-    super(name, age, gender);
-  }
-
-  getName(): string {
-    return this._name;
-  };
-
-  breed(): string {
-    return 'pushing miniature versions out.';
-  };
-
-  getAge(): number {
-    return this._age;
-  };
-
-  getGender(): string {
-    return this._gender;
-  };
-}
-
-export class Bird extends Animal {
-  constructor(name: string, age?: number, gender?: string) {
-    super(name, age, gender);
-  }
-
-  getName(): string {
-    return this._name;
-  };
-
-  breed(): string {
-    return 'laying eggs.';
-  };
 
   getAge(): number {
     return this._age;

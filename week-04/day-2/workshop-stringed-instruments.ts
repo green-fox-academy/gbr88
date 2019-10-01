@@ -11,7 +11,9 @@
 // Electric Guitar, a 7-stringed instrument that goes Twangg
 // Bass Guitar, a 5-stringed instrument that goes Duum-duum-duum
 
-import { ElectricGuitar, BassGuitar, Violin } from './instruments'
+import { ElectricGuitar } from './electric-guitar';
+import { BassGuitar } from './bass-guitar';
+import { Violin } from './violin';
 
 let guitar = new ElectricGuitar();
 let bassGuitar = new BassGuitar();

@@ -10,7 +10,9 @@
 // A Koala is breeding by pushing miniature versions out.
 // A Parrot is breeding by laying eggs.
 
-import { Reptile, Mammal, Bird } from './animal';
+import {Reptile} from './reptile';
+import {Mammal} from './mammal';
+import {Bird} from './bird';
 
 const reptile = new Reptile('Crocodile');
 const mammal = new Mammal('Koala');
