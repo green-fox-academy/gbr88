@@ -10,6 +10,10 @@ import { Plant } from './the-plant';
 export class Tree extends Plant {
 
   constructor(color: string) {
-    super(color, 'Tree', 10, 0.4)
+    super(color, 10, 0.4)
+  }
+
+  getType(): string {
+    return 'Tree';
   }
 }
