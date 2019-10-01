@@ -30,7 +30,9 @@ export class Plant {
   }
 
   watering(number: number): void {
-    this._waterAmount += number * this._absorb;
+    if (this._waterAmount < this._limit) {
+      this._waterAmount += number * this._absorb
+    };
   }
 
   status(): void {

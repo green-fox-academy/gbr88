@@ -27,7 +27,6 @@
 // The purple Tree doesnt need water
 // The orange Tree doesnt need water
 
-import { Plant } from './the-plant';
 import { Tree } from './the-tree';
 import { Flower } from './the-flower';
 import { Garden } from './the-garden';
