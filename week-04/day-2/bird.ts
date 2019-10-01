@@ -1,8 +1,9 @@
 'use strict';
 
-import { Animal } from './animal'
+import { Animal } from './animal';
+import { Flyable } from './flyable';
 
-export class Bird extends Animal {
+export class Bird extends Animal implements Flyable {
   constructor(name: string, age?: number, gender?: string) {
     super(name, age, gender);
   }
@@ -10,4 +11,8 @@ export class Bird extends Animal {
   breed(): string {
     return 'laying eggs.';
   };
+
+  fly(): void{};
+  land(): void{};
+  takeOff(): void{};
 }
