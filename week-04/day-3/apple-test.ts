@@ -25,3 +25,13 @@ test('test getApple()', t => {
   t.equal(actual, expected);
   t.end();
 });
+
+//this test will fail
+test('test getApple()', t => {
+  let a = new Apple();
+  const actual = a.getApple();
+  const expected = 'banana';
+
+  t.equal(actual, expected);
+  t.end();
+});
