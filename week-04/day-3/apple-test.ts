@@ -17,20 +17,10 @@ import * as test from 'tape';
 import { Apple } from './apple';
 
 //this test will pass
-test('test1 getApple()', t => {
+test('test getApple()', t => {
   let a = new Apple();
   const actual = a.getApple();
   const expected = 'apple';
-
-  t.equal(actual, expected);
-  t.end();
-});
-
-//this test will fail
-test('test2 getApple()', t => {
-  let a = new Apple();
-  const actual = a.getApple();
-  const expected = 'banana';
 
   t.equal(actual, expected);
   t.end();
