@@ -1,0 +1,19 @@
+.container {
+    background-color: #FFD62A;
+    display: flex;
+    height: 400px;
+    padding: 0px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.item {
+    background-color: #B02AFF;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+li {
+    list-style: none;
+}
