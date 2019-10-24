@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= h1 %>
+    </h1>
+    <div>
+        <ul>
+            <li>All</li>
+            <% alcoholList.forEach(e => { %>
+                <li>
+                    <%= e %>
+                </li>
+                <% }); %>
+        </ul>
+    </div>
+    <div>
+        <header>Name</header>
+        <ul>
+            <% cocktails.forEach(e => { %>
+                <li>
+                    <%=  e.name %>
+                </li>
+                <li>
+                    <%=  e.contains %>
+                </li>
+                <% }); %>
+        </ul>
+    </div>
+    <div>
+        <header>Price</header>
+        <ul>
+            <% cocktails.forEach(e => { %>
+                <li>
+                    <%=  e.price %>
+                </li>
+                <% }); %>
+        </ul>
+    </div>
+</body>
+
+</html>
