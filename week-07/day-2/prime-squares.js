@@ -7,11 +7,18 @@
 // the timer should stop when there are no more elements left to be colored
 
 let squares = document.getElementsByTagName('section');
+let counter = 1;
 
-for (let i = 2; i <= 100; i++) {
-    let div = document.createElement('div');
-    div.innerText = i + ' ' + isPrime(i);
-    squares[0].appendChild(div);
+genereateDivs();
+
+let divarray = document.querySelectorAll('div');
+
+function genereateDivs() {
+    for (let i = 2; i <= 100; i++) {
+        let div = document.createElement('div');
+        div.innerText = i;
+        squares[0].appendChild(div);
+    }
 }
 
 function isPrime(num) {
@@ -19,3 +26,18 @@ function isPrime(num) {
         if (num % i === 0) return false;
     return num > 1;
 }
+
+let primeValidator = setInterval(function() {
+    console.log(counter);
+    if (counter > 100) {
+        clearInterval(primeValidator);
+    } else {
+        if (!isPrime(counter)) {
+            divarray[counter - 1].classList.add('not-prime');
+        } else {
+            divarray[counter - 1].classList.add('prime')
+        };
+        counter++;
+    }
+
+}, 100);
