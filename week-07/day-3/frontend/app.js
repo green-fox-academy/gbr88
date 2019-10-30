@@ -40,6 +40,24 @@ app.get('/greeter', (req, res) => {
     res.send(greeter);
 });
 
+app.get(['/appenda/', '/appenda/:any'], (req, res) => {
+    let appenda = {};
+    let input = req.params;
+    if (input.any == undefined) {
+        appenda.readyState = 4;
+        appenda.responseText = "Not Found";
+        appenda.status = 404;
+        appenda.statusText = "Not Found";
+    } else {
+        appenda.appended = input.any + 'a';
+    }
+    res.send(appenda);
+});
+
+// app.get('/appenda/', (req, res) => {
+//     res.status(404).send('Not Found');
+// });
+
 app.listen(PORT, () => {
     console.log(`The server is up and running on ${PORT}`);
 });
