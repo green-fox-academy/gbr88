@@ -14,14 +14,30 @@ app.get('/', (req, res) => {
 
 app.get('/doubling', (req, res) => {
     let doubling = {};
-    let input = req.query.input;
-    if (input == undefined) {
+    let input = req.query;
+    let inputValues = req.query.input;
+    if (Object.entries(input).length === 0) {
         doubling.error = "Please provide an input!"
     } else {
-        doubling.received = input;
-        doubling.result = input * 2;
+        doubling.received = inputValues;
+        doubling.result = inputValues * 2;
     }
     res.send(doubling);
+});
+
+app.get('/greeter', (req, res) => {
+    let greeter = {};
+    let input = req.query;
+    if (Object.entries(input).length === 0) {
+        greeter.error = "Please provide a name and a title!"
+    } else if (input.hasOwnProperty("name") && !input.hasOwnProperty("title")) {
+        greeter.error = "Please provide a title!"
+    } else if (!input.hasOwnProperty("name") && input.hasOwnProperty("title")) {
+        greeter.error = "Please provide a name!"
+    } else {
+        greeter.welcome_message = 'Oh, hi there ' + req.query.name + ', my dear ' + req.query.title + '!';
+    }
+    res.send(greeter);
 });
 
 app.listen(PORT, () => {
