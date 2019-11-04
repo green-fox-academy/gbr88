@@ -24,7 +24,7 @@ conn.connect((err) => {
 });
 
 app.get('/hello', function(req, res) {
-    let hi = 'hello world'
+    let hi = 'hello world';
     res.send(hi);
 });
 
@@ -32,7 +32,7 @@ app.get('/posts', function(req, res) {
     req.accepts('application/json');
     res.status(200);
     res.header('Content-Type', 'application/json');
-    let sql = `SELECT * FROM posts;`
+    let sql = `SELECT * FROM posts;`;
     conn.query(sql, function(err, rows) {
         if (err) {
             console.log(err.toString());
@@ -50,7 +50,6 @@ app.post('/posts', function(req, res) {
     let sqlselect = `SELECT * FROM posts WHERE id = (SELECT MAX(id) FROM posts)`;
     let sqlinsert = `INSERT INTO posts (title, url, timestamp) VALUES ("${req.body.title}", "${req.body.url}", now())`;
     conn.query(`${sqlinsert}; ${sqlselect}`, function(err, rows) {
-        console.log()
         if (err) {
             console.log(err.toString());
             res.status(500).send('Database error');
@@ -67,7 +66,6 @@ app.put('/posts/:id/upvote', function(req, res) {
     let sqlselect = `SELECT * FROM posts WHERE id = "${req.params.id}"`;
     let sqlinsert = `UPDATE posts SET score = score + 1 WHERE id = ${req.params.id}`;
     conn.query(`${sqlinsert}; ${sqlselect}`, function(err, rows) {
-        console.log()
         if (err) {
             console.log(err.toString());
             res.status(500).send('Database error');
@@ -84,7 +82,6 @@ app.put('/posts/:id/downvote', function(req, res) {
     let sqlselect = `SELECT * FROM posts WHERE id = "${req.params.id}"`;
     let sqlinsert = `UPDATE posts SET score = score - 1 WHERE id = ${req.params.id}`;
     conn.query(`${sqlinsert}; ${sqlselect}`, function(err, rows) {
-        console.log()
         if (err) {
             console.log(err.toString());
             res.status(500).send('Database error');
