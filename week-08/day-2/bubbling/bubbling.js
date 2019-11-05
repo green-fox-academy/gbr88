@@ -10,7 +10,6 @@ nav.addEventListener('click', function(e) {
     if (e.target.attributes[1].value == 'in') {
         zoomed += 20;
         img.style.backgroundSize = `${zoomed}%`;
-        console.log(e)
     }
 
     if (e.target.attributes[1].value == 'out') {
@@ -20,21 +19,21 @@ nav.addEventListener('click', function(e) {
 
     if (e.target.attributes[1].value == 'up') {
         positionY -= 10;
-        img.style.backgroundPositionY = `${positionY}px`
+        img.style.backgroundPositionY = `${positionY}px`;
     }
 
     if (e.target.attributes[1].value == 'down') {
         positionY += 10;
-        img.style.backgroundPositionY = `${positionY}px`
+        img.style.backgroundPositionY = `${positionY}px`;
     }
 
     if (e.target.attributes[1].value == 'left') {
         positionX -= 10;
-        img.style.backgroundPositionX = `${positionX}px`
+        img.style.backgroundPositionX = `${positionX}px`;
     }
 
     if (e.target.attributes[1].value == 'right') {
         positionX += 10;
-        img.style.backgroundPositionX = `${positionX}px`
+        img.style.backgroundPositionX = `${positionX}px`;
     }
 });
