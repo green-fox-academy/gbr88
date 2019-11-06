@@ -9,26 +9,28 @@
 </head>
 
 <body>
-    <div>
-        <p>
-            What is your favourite pet?
-        </p>
-        <input type="radio" name="pet" value="dog"> Dog<br>
-        <input type="radio" name="pet" value="cat"> Cat<br>
+    <p>
+        What is your favourite pet?
+    </p>
+    <div id="pets">
+
+        <input type="radio" name="pet" value="dog"> Dog
+        <input type="radio" name="pet" value="cat"> Cat
         <input type="radio" name="pet" value="goldfish"> Viktor the goldfish
     </div>
-    <div>
-        <p>
-            Do you want to sign up for cat facts?
-        </p>
-        <input type="radio" name="vote" value="yes"> Yes<br>
+    <p>
+        Do you want to sign up for cat facts?
+    </p>
+    <div id="votes">
+        <input type="radio" name="vote" value="yes"> Yes
         <input type="radio" name="vote" value="no"> No
     </div>
     <br>
-    <div>
-        <input type="radio" name="options" value="love" disabled> I love cats<br>
-        <input type="radio" name="options" value="signup" disabled> Sign up
+    <div id="options">
+        <button>I love cats</button>
+        <button>Sign up</button>
     </div>
+    <script src="button-disable.js"></script>
 </body>
 
 </html>
