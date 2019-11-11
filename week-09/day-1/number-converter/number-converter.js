@@ -37,16 +37,26 @@ function converter(number) {
         9: 'ninety'
     }
 
-    let rest = number % 10;
-    let divided = Math.floor(number / 10);
-    if (number <= 19) {
-        return Object.values(list19[number]).join('');
-    } else {
-        return (`${Object.values(list10s[divided]).join('')}-${Object.values(list19[rest]).join('')}`);
-    };
+    let list100 = 'hundred'
+
+    let temp = [];
+    temp.push(number);
+    let length = temp[0].toString().split('');
+    console.log(length);
+
+    // let rest = number % 10;
+    // let divided = Math.floor(number / 10);
+    // let hundred = number
+    // if (number <= 19) {
+    //     return Object.values(list19[number]).join('');
+    // } else {
+    //     return (`${Object.values(list10s[divided]).join('')}-${Object.values(list19[rest]).join('')}`);
+    // };
 
 
 
 }
 
 module.exports = converter;
+
+converter(212);
