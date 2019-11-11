@@ -10,3 +10,11 @@ test('test anagramIfTrue', t => {
     t.equal(actual, expected);
     t.end();
 });
+
+test('test anagramIfFalse', t => {
+    let actual = anagram("alma", "mala");
+    let expected = false;
+
+    t.equal(actual, expected);
+    t.end();
+});
