@@ -10,11 +10,13 @@ app.get('/groot', (req, res) => {
             "received": input,
             "translated": "I am Groot!"
         });
+        res.status(200);
     } else {
         res.json({
             "error": "I am Groot!"
-        })
-    };
+        });
+        res.status(406);
+    }
 });
 
 module.exports = app;
