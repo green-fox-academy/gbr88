@@ -1,0 +1,77 @@
+* {
+    font-size: 28px;
+}
+
+body {
+    display: flex;
+    background-color: #3E94EC;
+    align-content: center;
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    margin: 30px auto;
+}
+
+th {
+    height: 35px;
+    text-align: left;
+    padding: 30px;
+    color: #BFC7CF;
+    background-color: black;
+    border-bottom: 4px solid #9EA7AF;
+}
+
+th:nth-child(1) {
+    border-right: 2px solid #9EA7AF;
+    border-radius: 5px 0 0 0;
+    width: 40%;
+}
+
+th:nth-child(2) {
+    border-left: 2px solid #9EA7AF;
+    border-radius: 0 5px 0 0;
+}
+
+td {
+    height: 30px;
+    padding: 25px;
+    color: #6A6F88;
+}
+
+td:nth-of-type(1) {
+    border-right: 2px solid #9EA7AF;
+    border-bottom: 2px solid #9EA7AF;
+}
+
+td:nth-of-type(2) {
+    border-left: 2px solid #9EA7AF;
+    border-bottom: 2px solid #9EA7AF;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+tr:last-child td:nth-of-type(1) {
+    border-right: 2px solid #9EA7AF;
+    border-radius: 0 0 0 5px;
+}
+
+tr:last-child td:nth-of-type(2) {
+    border-left: 2px solid #9EA7AF;
+    border-radius: 0 0 5px 0;
+}
+
+tr:nth-child(odd) {
+    background-color: #EBEBEB;
+}
+
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+td[data-currency]::before {
+    content: '$';
+}
