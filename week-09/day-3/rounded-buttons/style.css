@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    background-color: #2F3060;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    display: flex;
+    margin: auto;
+    width: 500px;
+    height: 60px;
+    justify-content: space-between;
+}
+
+button {
+    width: 140px;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(110%)
+}
+
+button:active {
+    filter: brightness(90%)
+}
+
+button:nth-child(1) {
+    background-color: #405E9D;
+    box-shadow: 0 2px 0 0 rgb(34, 51, 87), inset 0px 2px 0px 0px rgba(255, 255, 255, 0.199);
+}
+
+button:nth-child(2) {
+    background-color: #1CAC59;
+    box-shadow: 0 2px 0 0 rgb(14, 82, 42), inset 0px 2px 0px 0px rgba(255, 255, 255, 0.199);
+}
+
+button:nth-child(3) {
+    background-color: #D34232;
+    box-shadow: 0 2px 0 0 rgb(128, 38, 28), inset 0px 2px 0px 0px rgba(255, 255, 255, 0.199);
+}
