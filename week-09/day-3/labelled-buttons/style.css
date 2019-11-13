@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    background-color: #313841;
+}
+
+.container {
+    margin: auto;
+    padding: 0;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    border: 1px solid black;
+    display: block;
+}
+
+button {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: #FFFFFF;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+button[data-action='delete'] {
+    color: red;
+}
+
+button[data-action='confirm'] {
+    color: rgb(0, 255, 0);
+}
+
+span {
+    display: flex;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    float: left;
+}
+
+.conf {
+    background-color: rgb(0, 255, 0);
+}
+
+.del {
+    background-color: red;
+}
