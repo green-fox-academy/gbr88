@@ -32,6 +32,7 @@ app.get('/posts', function(req, res) {
     req.accepts('application/json');
     res.status(200);
     res.header('Content-Type', 'application/json');
+    res.header('Access-Control-Allow-Origin', '*');
     let sql = `SELECT * FROM posts;`;
     conn.query(sql, function(err, rows) {
         if (err) {
@@ -39,7 +40,7 @@ app.get('/posts', function(req, res) {
             res.status(500).send('Database error');
             return;
         }
-        res.send(rows);
+        res.send({ "posts": rows });
     });
 });
 
@@ -47,6 +48,7 @@ app.post('/posts', function(req, res) {
     req.accepts('application/json');
     res.status(200);
     res.header('Content-Type', 'application/json');
+    res.header('Access-Control-Allow-Origin', '*');
     let sqlselect = `SELECT * FROM posts WHERE id = (SELECT MAX(id) FROM posts)`;
     let sqlinsert = `INSERT INTO posts (title, url, timestamp) VALUES ("${req.body.title}", "${req.body.url}", now())`;
     conn.query(`${sqlinsert}; ${sqlselect}`, function(err, rows) {
@@ -63,6 +65,7 @@ app.put('/posts/:id/upvote', function(req, res) {
     req.accepts('application/json');
     res.status(200);
     res.header('Content-Type', 'application/json');
+    res.header('Access-Control-Allow-Origin', '*');
     let sqlselect = `SELECT * FROM posts WHERE id = "${req.params.id}"`;
     let sqlinsert = `UPDATE posts SET score = score + 1 WHERE id = ${req.params.id}`;
     conn.query(`${sqlinsert}; ${sqlselect}`, function(err, rows) {
@@ -79,6 +82,7 @@ app.put('/posts/:id/downvote', function(req, res) {
     req.accepts('application/json');
     res.status(200);
     res.header('Content-Type', 'application/json');
+    res.header('Access-Control-Allow-Origin', '*');
     let sqlselect = `SELECT * FROM posts WHERE id = "${req.params.id}"`;
     let sqlinsert = `UPDATE posts SET score = score - 1 WHERE id = ${req.params.id}`;
     conn.query(`${sqlinsert}; ${sqlselect}`, function(err, rows) {
