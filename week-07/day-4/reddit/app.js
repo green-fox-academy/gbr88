@@ -7,6 +7,7 @@ const PORT = 3000;
 const env = require('dotenv').config();
 const bodyParser = require('body-parser');
 
+app.use(express.static('assets'));
 app.use(bodyParser.json());
 app.use(express.json());
 
@@ -22,6 +23,11 @@ conn.connect((err) => {
     if (err) throw err;
     console.log('Connected!');
 });
+
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/views/index.html');
+});
+
 
 app.get('/hello', function(req, res) {
     let hi = 'hello world';
