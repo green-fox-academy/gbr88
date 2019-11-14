@@ -23,7 +23,6 @@ article {
     flex-grow: 6;
     flex-direction: column;
     margin-right: 5px;
-    background-color: white;
 }
 
 aside {
@@ -42,21 +41,21 @@ aside button {
 
 .posts {
     display: flex;
-    border: 1px solid;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
+    background-color: white;
 }
 
 .votes {
     display: flex;
     flex-grow: 2;
     flex-direction: column;
-    border: 1px solid;
     align-items: center;
 }
 
 .content {
     display: flex;
     flex-grow: 10;
+    flex-direction: column;
 }
 
 .votes button {
@@ -71,8 +70,21 @@ aside button {
     background-color: #F5F5F5;
 }
 
-h1 {
+.about h1 {
     background-color: white;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 2em;
+}
+
+span {
+    margin-left: 5px;
+    color: #4AA3DF;
+    font-size: 0.5em;
+}
+
+p {
+    text-align: center;
 }
 
 .upvote {
