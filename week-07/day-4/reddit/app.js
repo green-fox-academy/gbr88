@@ -39,7 +39,7 @@ app.get('/posts', function(req, res) {
     res.status(200);
     res.header('Content-Type', 'application/json');
     res.header('Access-Control-Allow-Origin', '*');
-    let sql = `SELECT * FROM posts;`;
+    let sql = `SELECT * FROM posts ORDER BY id DESC;`;
     conn.query(sql, function(err, rows) {
         if (err) {
             console.log(err.toString());
@@ -56,7 +56,7 @@ app.get('/add', function(req, res) {
 
 app.post('/posts', function(req, res) {
     res.status(200);
-    res.header('Content-Type', 'application/json');
+    res.header('Content-Type', 'application/json', 'text/html');
     res.header('Access-Control-Allow-Origin', '*');
     let sqlselect = `SELECT * FROM posts WHERE id = (SELECT MAX(id) FROM posts)`;
     let sqlinsert = `INSERT INTO posts (title, url, timestamp) VALUES ("${req.body.title}", "${req.body.url}", now())`;
@@ -66,7 +66,7 @@ app.post('/posts', function(req, res) {
             res.status(500).send('Database error');
             return;
         }
-        res.send(rows);
+        res.redirect('http://localhost:3000');
     });
 });
 
