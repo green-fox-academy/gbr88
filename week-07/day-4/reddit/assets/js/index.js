@@ -55,6 +55,8 @@ index.onload = function() {
     };
 }
 
+index.send();
+
 let aside = document.querySelector('aside');
 let span = document.querySelector('span');
 let descList = document.querySelector('ul');
@@ -69,5 +71,3 @@ for (let i = 0; i < desc.length; i++) {
     li.innerText = desc[i];
     descList.appendChild(li);
 }
-
-index.send();
