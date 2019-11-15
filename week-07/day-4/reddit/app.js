@@ -7,8 +7,8 @@ const PORT = 3000;
 const env = require('dotenv').config();
 const bodyParser = require('body-parser');
 
-app.use(express.static('assets'));
-app.use(bodyParser.json());
+app.use('/assets', express.static('assets'));
+app.use(bodyParser());
 app.use(express.json());
 
 let conn = mysql.createConnection({
@@ -50,8 +50,11 @@ app.get('/posts', function(req, res) {
     });
 });
 
+app.get('/add', function(req, res) {
+    res.sendFile(__dirname + '/views/new-post.html')
+});
+
 app.post('/posts', function(req, res) {
-    req.accepts('application/json');
     res.status(200);
     res.header('Content-Type', 'application/json');
     res.header('Access-Control-Allow-Origin', '*');

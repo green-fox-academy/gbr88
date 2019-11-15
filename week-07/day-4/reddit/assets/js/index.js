@@ -26,9 +26,12 @@ index.onload = function() {
         posts.classList.add('posts');
 
         votes.classList.add('votes');
+        votes.setAttribute('id', response.posts[i].id);
         upvote.classList.add('upvote');
+        upvote.setAttribute('action', 'up');
         score.innerText = response.posts[i].score;
         downvote.classList.add('downvote');
+        downvote.setAttribute('action', 'down');
 
         content.classList.add('content');
         title.innerText = response.posts[i].title;
@@ -54,9 +57,11 @@ index.onload = function() {
 
 let aside = document.querySelector('aside');
 let span = document.querySelector('span');
-let descList = document.querySelector('ul')
+let descList = document.querySelector('ul');
+let link = aside.querySelector('button');
 let desc = ['Astrophysics', 'Cosmology', 'Space Exploration', 'Planetary Science', 'Astrobiology'];
 
+link.setAttribute('onclick', 'window.location.href = "http://localhost:3000/add"');
 span.innerText = 'r/space';
 
 for (let i = 0; i < desc.length; i++) {
@@ -64,6 +69,5 @@ for (let i = 0; i < desc.length; i++) {
     li.innerText = desc[i];
     descList.appendChild(li);
 }
-
 
 index.send();
