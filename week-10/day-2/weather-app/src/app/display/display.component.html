@@ -1,2 +1,5 @@
 <p>display works!</p>
-<p>{{ weather }}</p>
+<div *ngIf="response">
+    <p>{{ response.name }}</p>
+    <p>{{ response.main.temp }}</p>
+</div>
