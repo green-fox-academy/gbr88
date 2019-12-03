@@ -1,5 +1,9 @@
 <p>display works!</p>
 <div *ngIf="response">
-    <p>{{ response.name }}</p>
-    <p>{{ response.main.temp }}</p>
+    <div>
+        <p>{{ response.list[0].name }}</p>
+        <p>{{ response.list[0].sys.country }}</p>
+        <p>{{ response.list[0].main.temp }} Celsius</p>
+        <p>{{ response.list[0].weather[0].main }}</p>
+    </div>
 </div>

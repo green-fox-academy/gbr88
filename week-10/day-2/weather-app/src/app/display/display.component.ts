@@ -13,8 +13,13 @@ export class DisplayComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.http.get('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=8c00b8045a08a472d2f7b2e664aa46b1')
-    .subscribe((response) => this.response = response);
+    this.http.get('http://api.openweathermap.org/data/2.5/group?id=' +
+    '5809844,5117451,6356055,2643743,3054643' +
+    '&units=metric&APPID=8c00b8045a08a472d2f7b2e664aa46b1')
+    .subscribe((response) => {
+      this.response = response;
+      console.log(response);
+    });
   }
 
 }
