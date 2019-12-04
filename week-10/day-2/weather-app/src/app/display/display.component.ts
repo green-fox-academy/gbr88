@@ -18,7 +18,6 @@ export class DisplayComponent implements OnInit {
     '&units=metric&APPID=8c00b8045a08a472d2f7b2e664aa46b1')
     .subscribe((response) => {
       this.response = response;
-      console.log(response);
     });
   }
 

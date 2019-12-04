@@ -1,9 +1,8 @@
-<p>display works!</p>
 <div *ngIf="response">
-    <div>
-        <p>{{ response.list[0].name }}</p>
-        <p>{{ response.list[0].sys.country }}</p>
-        <p>{{ response.list[0].main.temp }} Celsius</p>
-        <p>{{ response.list[0].weather[0].main }}</p>
+    <div *ngFor="let list of response.list">
+        <p>{{ list.name }}</p>
+        <p>{{ list.sys.country }}</p>
+        <p>{{ list.main.temp }} Celsius</p>
+        <p>{{ list.weather[0].main }}</p>
     </div>
 </div>
