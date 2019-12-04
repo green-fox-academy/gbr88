@@ -1,8 +1,1 @@
-<div class="data-display" *ngFor="let list of response">
-    <div class="location">
-        <p class="name">{{ list.name }}</p>
-        <p class="country">{{ list.sys.country }}</p>
-    </div>
-    <p class="temp">{{ list.main.temp | number: '1.0-0'}}°C</p>
-    <div class="sky"><img class="sky" src="../../../assets/{{ list.weather[0].main }}.png"></div>
-</div>
+<app-info-panel *ngFor="let response of toDisplay" [response]="response"></app-info-panel>
