@@ -17,7 +17,7 @@ export class DisplayComponent implements OnInit {
     '5809844,5117451,6356055,2643743,3054643' +
     '&units=metric&APPID=8c00b8045a08a472d2f7b2e664aa46b1')
     .subscribe((response) => {
-      this.response = response;
+      this.response = response['list'];
     });
   }
 

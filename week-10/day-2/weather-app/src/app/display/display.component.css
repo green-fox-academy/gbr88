@@ -1,0 +1,49 @@
+* {
+    color: #34495E;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.data-display {
+    background-color: #ffffff;
+    margin: 20px auto;
+    width: 500px;
+    height: 140px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    display: flex;
+}
+
+.country {
+    display: flex;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.temp {
+    display: flex;
+}
+
+.sky {
+    display: flex;
+    margin-right: 30px;
+}
+
+img {
+    width: 90px;
+    height: 90px;
+}
