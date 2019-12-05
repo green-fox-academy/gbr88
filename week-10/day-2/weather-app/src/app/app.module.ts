@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoPanelComponent } from './info-panel/info-panel.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
-    InfoPanelComponent
+    InfoPanelComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
