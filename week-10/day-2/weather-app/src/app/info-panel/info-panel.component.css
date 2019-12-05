@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .info-panel {
     background-color: #ffffff;
     margin: 20px auto;

@@ -1,2 +1,5 @@
-<app-search></app-search>
+<div class="search-box">
+    <input type="text" class="searchField" [(ngModel)]="inputText">
+    <button class="bSearch" type="button" (click)="search()">Search</button>
+</div>
 <app-info-panel *ngFor="let panels of toDisplay" [response]="panels"></app-info-panel>

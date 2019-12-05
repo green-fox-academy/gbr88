@@ -17,7 +17,7 @@ export class WeatherService {
     return this.http
       .get<WeatherResponse[]>(environment.serviceApiUrl + input + unit + environment.serviceApiId)
       .pipe(map((result) => {
-        return result['list']
+        return result['list'];
       }));
   }
 

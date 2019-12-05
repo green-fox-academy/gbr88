@@ -6,3 +6,10 @@
     margin: 0px;
     padding: 0px;
 }
+
+.search-box {
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
