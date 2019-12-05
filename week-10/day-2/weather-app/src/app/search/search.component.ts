@@ -1,3 +1,4 @@
+import { WeatherService } from './../weather.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private svc: WeatherService) {}
 
   ngOnInit() {
   }
+
+// search() {
+//     this.svc.weatherData(this.inputText, this.unit).subscribe((response) => {
+//       this.toDisplay = response;
+//     });
+//   }
 
 }
