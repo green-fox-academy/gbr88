@@ -9,16 +9,13 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class WeatherService {
-  cityIds: number[] = [5809844, 5117451, 6356055, 2643743, 3054643];
-  measurementType: string = '&units=metric'
-  weatherUrl: string = environment.serviceApiUrl + this.cityIds.toString() + this.measurementType + environment.serviceApiId;
 
   constructor(private http: HttpClient) { }
 
-  weatherData(): Observable<WeatherResponse> {
+  weatherData(input:string,unit:string): Observable<WeatherResponse> {
 
     return this.http
-      .get<WeatherResponse[]>(this.weatherUrl)
+      .get<WeatherResponse[]>(environment.serviceApiUrl + input + unit + environment.serviceApiId)
       .pipe(map((result) => {
         return result['list']
       }));

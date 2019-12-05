@@ -8,11 +8,13 @@ import { WeatherService } from '../weather.service';
 })
 export class DisplayComponent implements OnInit {
   toDisplay: any;
+  cityIds: number[] = [5809844, 5117451, 6356055, 2643743, 3054643];
+  unit: string = '&units=metric'
   constructor(private svc: WeatherService) {
   }
 
   ngOnInit() {
-    this.svc.weatherData().subscribe((response) => {
+    this.svc.weatherData(this.cityIds.toString(),this.unit).subscribe((response) => {
       this.toDisplay = response;
     });
   }
