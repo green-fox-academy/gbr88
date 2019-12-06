@@ -13,7 +13,8 @@ import { InfoPanelForecastComponent } from './info-panel-forecast/info-panel-for
 
 const appRoutes: Routes = [
   { path: '', component: DisplayComponent },
-  { path: 'dashboard', component: DisplayComponent }
+  { path: 'dashboard', component: DisplayComponent },
+  { path: ':id', component: DisplayForecastComponent }
 ];
 
 @NgModule({

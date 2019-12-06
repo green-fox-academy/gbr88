@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { WeatherResponse } from '../models/weather-response';
 
 @Component({
   selector: 'app-info-panel-forecast',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-panel-forecast.component.css']
 })
 export class InfoPanelForecastComponent implements OnInit {
+  @Input() response: WeatherResponse;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
+  };
 }
