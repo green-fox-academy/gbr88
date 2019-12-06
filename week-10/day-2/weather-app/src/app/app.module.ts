@@ -1,23 +1,34 @@
 import { WeatherService } from './weather.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoPanelComponent } from './info-panel/info-panel.component';
-import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { DisplayForecastComponent } from './display-forecast/display-forecast.component';
+import { InfoPanelForecastComponent } from './info-panel-forecast/info-panel-forecast.component';
+
+const appRoutes: Routes = [
+  { path: '', component: DisplayComponent },
+  { path: 'dashboard', component: DisplayComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
     InfoPanelComponent,
-    SearchComponent
+    DisplayForecastComponent,
+    InfoPanelForecastComponent,
+
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes
+    ),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
