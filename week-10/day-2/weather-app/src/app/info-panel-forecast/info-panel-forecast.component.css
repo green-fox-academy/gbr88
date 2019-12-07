@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #34495E;
+    font-family: 'Lato', sans-serif;
+}
+
+.info-panel {
+    display: flex;
+    margin: 20px auto;
+    width: 900px;
+    height: 300px;
+    flex-direction: column;
+}
+
+.name {
+    display: flex;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.forecast {
+    display: flex;
+    align-items: center;
+}
+
+.day {
+    background-color: #ffffff;
+    margin: 10px;
+    width: 180px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sky {
+    margin-top: 20px;
+    display: flex;
+}
+
+img {
+    width: 90px;
+    height: 90px;
+    object-fit: fill;
+}
+
+.temp {
+    display: flex;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.time {
+    display: flex;
+    margin-bottom: 20px;
+}

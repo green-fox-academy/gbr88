@@ -21,8 +21,8 @@ export class DisplayForecastComponent implements OnInit {
     );
   
     // console.log(this.selectedId.destination.destination._value.id);
-    this.svc.weatherData(environment.searchFormula[0], this.selectedId.destination.destination._value.id, environment.unit).subscribe((response) => {
-      this.toDisplay = response['list'];
+    this.svc.weatherData(environment.searchFormula[2], this.selectedId.destination.destination._value.id, environment.unit).subscribe((response) => {
+      this.toDisplay = [response];
     });
   }
 

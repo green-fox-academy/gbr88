@@ -7,10 +7,12 @@ import { WeatherResponse } from '../models/weather-response';
   styleUrls: ['./info-panel-forecast.component.css']
 })
 export class InfoPanelForecastComponent implements OnInit {
+
   @Input() response: WeatherResponse;
 
   constructor() { }
 
   ngOnInit() {
   };
+
 }
