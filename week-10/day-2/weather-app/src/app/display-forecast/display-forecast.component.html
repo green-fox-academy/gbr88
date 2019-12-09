@@ -1,1 +1,8 @@
-<app-info-panel-forecast *ngFor="let panels of toDisplay" [response]="panels"></app-info-panel-forecast>
+<div class="forecast">
+    <p class="name">{{ cityName }}</p>
+    <div class="forecast-panels">
+        <div class="panels" *ngFor="let item of toDisplay; let i = index">
+            <app-info-panel-forecast *ngIf="i % 8 ===0" [response]='item'></app-info-panel-forecast>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import { switchMap } from 'rxjs/operators';
 export class DisplayForecastComponent implements OnInit {
   toDisplay: any;
   selectedId: any;
+  cityName: string;
   constructor(private svc: WeatherService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -21,7 +22,8 @@ export class DisplayForecastComponent implements OnInit {
     );
   
     this.svc.weatherData(environment.searchFormula[2], this.selectedId.destination.destination._value.id, environment.unit).subscribe((response) => {
-      this.toDisplay = [response];
+      this.toDisplay = response['list'];
+      this.cityName = response['city'].name;
     });
   }
 

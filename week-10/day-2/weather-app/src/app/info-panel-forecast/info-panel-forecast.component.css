@@ -5,25 +5,6 @@
     font-family: 'Lato', sans-serif;
 }
 
-.info-panel {
-    display: flex;
-    margin: 20px auto;
-    width: 900px;
-    height: 300px;
-    flex-direction: column;
-}
-
-.name {
-    display: flex;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.forecast {
-    display: flex;
-    align-items: center;
-}
-
 .day {
     background-color: #ffffff;
     margin: 10px;
