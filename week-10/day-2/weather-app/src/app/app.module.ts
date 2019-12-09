@@ -14,6 +14,7 @@ import { InfoPanelForecastComponent } from './info-panel-forecast/info-panel-for
 const appRoutes: Routes = [
   { path: '', component: DisplayComponent },
   { path: 'dashboard', component: DisplayComponent },
+  { path: 'dashboard/:id', component: DisplayForecastComponent },
   { path: ':id', component: DisplayForecastComponent }
 ];
 
